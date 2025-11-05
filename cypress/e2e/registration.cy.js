@@ -63,5 +63,26 @@ describe('Student Registration Form', () => {
       .contains('Date of Birth')
       .next()
       .should('contain.text', '15 May,1990');
+
+    // ✅ Additional assertions
+    cy.get('td')
+      .contains('Subjects')
+      .next()
+      .should('have.text', 'Maths');
+
+    cy.get('td')
+      .contains('Hobbies')
+      .next()
+      .should('have.text', 'Sports');
+
+    cy.get('td')
+      .contains('Address')
+      .next()
+      .should('have.text', '123 Test Street');
+
+    cy.get('td')
+      .contains('State and City')
+      .next()
+      .should('have.text', 'NCR Delhi');
   });
 });
